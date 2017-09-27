@@ -13,6 +13,7 @@ namespace QuickSorting
             int[] arr = { 2, 8, 7, 1, 3, 5, 6, 4 };
             QuickSortImpl sorter = new QuickSortImpl(arr);
             sorter.Sort();
+            sorter.SortDescending();
         }
     }
 }

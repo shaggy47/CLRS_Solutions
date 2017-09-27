@@ -34,6 +34,23 @@ namespace QuickSorting
             return i + 1;
         }
 
+        private int PartitionDesc(int p, int r)
+        {
+            int i = p - 1;
+            int pivote = collection[r];
+            for (int j = p; j <= r - 1; j++)
+            {
+                if (collection[j] >= pivote)
+                {
+                    i++;
+                    Swap(i, j);
+                }
+            }
+
+            Swap(i + 1, r);
+            return i + 1;
+        }
+
         private void QuickSort(int p, int r)
         {
             if (p < r)
@@ -41,6 +58,16 @@ namespace QuickSorting
                 int q = Partition(p, r);
                 QuickSort(p, q - 1);
                 QuickSort(q + 1, r);
+            }
+        }
+
+        private void QuickSortDesc(int p, int r)
+        {
+            if (p < r)
+            {
+                int q = PartitionDesc(p, r);
+                QuickSortDesc(p, q - 1);
+                QuickSortDesc(q + 1, r);
             }
         }
 
@@ -52,6 +79,11 @@ namespace QuickSorting
         public void Sort()
         {
             QuickSort(0, collection.Length - 1);
+        }
+
+        public void SortDescending()
+        {
+            QuickSortDesc(0, collection.Length - 1);
         }
     }
 }
