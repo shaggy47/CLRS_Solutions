@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapAndHeapSort", "HeapAndH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSorting", "QuickSorting\QuickSorting.csproj", "{B6E6A144-0C30-46CC-8F7A-063AAE659623}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter9", "Chapter9", "{DBEFF3C8-4691-437E-BE66-23B8D6AA17E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElementaryDataStrucutres", "ElementaryDataStrucutres\ElementaryDataStrucutres.csproj", "{194DE457-1910-4B6D-A0C0-110A5A508721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,10 @@ Global
 		{B6E6A144-0C30-46CC-8F7A-063AAE659623}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6E6A144-0C30-46CC-8F7A-063AAE659623}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6E6A144-0C30-46CC-8F7A-063AAE659623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194DE457-1910-4B6D-A0C0-110A5A508721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194DE457-1910-4B6D-A0C0-110A5A508721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194DE457-1910-4B6D-A0C0-110A5A508721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194DE457-1910-4B6D-A0C0-110A5A508721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +84,7 @@ Global
 		{79CD06F7-8305-4FB5-95EB-C9D14A3975F2} = {8ABCC70A-C03D-4E12-9799-AA060F2C0F36}
 		{839FEB6F-A48C-4581-BA48-6A60F99BBE05} = {5CE3E9A8-1850-4076-B9FA-89B504C2451A}
 		{B6E6A144-0C30-46CC-8F7A-063AAE659623} = {5CE3E9A8-1850-4076-B9FA-89B504C2451A}
+		{194DE457-1910-4B6D-A0C0-110A5A508721} = {DBEFF3C8-4691-437E-BE66-23B8D6AA17E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE60EC45-0E7B-47CA-851C-D051E7A69F07}
