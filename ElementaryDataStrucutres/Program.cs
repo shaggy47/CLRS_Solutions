@@ -8,18 +8,15 @@ namespace ElementaryDataStrucutres
     {
         static void Main(string[] args)
         {
-            Queue queue = new Queue();
-            queue.EnQueue(10);
-            queue.EnQueue(11);
-            queue.EnQueue(12);
-            queue.EnQueue(13);
-            queue.EnQueue(14);
-            queue.EnQueue(15);
-            Console.WriteLine("Head = {0}, Tail = {1}", queue.PeekHead(), queue.PeekTail());
-            while (!queue.IsEmpty())
-            {
-                Console.WriteLine(queue.DeQueue());
-            }
+            LinkedList.LinkedList<int> linkedList = new LinkedList.LinkedList<int>();
+            linkedList.Add(10);
+            linkedList.Add(11);
+            linkedList.Add(12);
+            linkedList.Add(13);
+            linkedList.Add(14);
+            linkedList.Insert(0, 0);
+            linkedList.Delete(3);
+            linkedList.Print();
         }
     }
 }
