@@ -10,6 +10,7 @@ namespace ElementaryDataStrucutres.LinkedList
     class LinkedList<T> where T : struct, IComparable, IComparable<T>, IConvertible, IEquatable<T>
     {
         private Node<T> head;
+        private ListType type;
 
         private Node<T> AddRecursive(Node<T> node, T data)
         {
@@ -22,7 +23,13 @@ namespace ElementaryDataStrucutres.LinkedList
             }
             else
             {
-                node.next = AddRecursive(node.next, data);
+                Node<T> prev = AddRecursive(node.next, data); ;
+                node.next = prev;
+
+                if (type == ListType.Doubly)
+                {
+                    prev.prev = node;
+                }
             }
 
             return node;
@@ -31,6 +38,13 @@ namespace ElementaryDataStrucutres.LinkedList
         public LinkedList()
         {
             head = null;
+            this.type = ListType.Singly;
+        }
+
+        public LinkedList(ListType listType)
+        {
+            head = null;
+            this.type = listType;
         }
 
         public void Add(T data)

@@ -11,11 +11,12 @@ namespace ElementaryDataStrucutres.LinkedList
         T data;
 
         public Node<T> next;
-
+        public Node<T> prev;
         public Node(T item)
         {
             this.data = item;
             this.next = null;
+            this.prev = null;
         }
 
         public override string ToString()

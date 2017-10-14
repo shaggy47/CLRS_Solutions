@@ -9,6 +9,7 @@ namespace ElementaryDataStrucutres
         static void Main(string[] args)
         {
             LinkedList.LinkedList<int> linkedList = new LinkedList.LinkedList<int>();
+
             linkedList.Add(10);
             linkedList.Add(11);
             linkedList.Add(12);
