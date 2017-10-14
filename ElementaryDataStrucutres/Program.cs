@@ -18,6 +18,9 @@ namespace ElementaryDataStrucutres
             linkedList.Add(16);
             linkedList.Sort();
             linkedList.Print();
+            Console.WriteLine("**************");
+            linkedList.SortDescending();
+            linkedList.Print();
         }
     }
 }

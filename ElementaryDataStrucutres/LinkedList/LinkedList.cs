@@ -144,7 +144,13 @@ namespace ElementaryDataStrucutres.LinkedList
         
         private void Copy(LinkedList<T> souce)
         {
-            this.Head = souce.Head; 
+            this.Head = souce.Head;
+            Node<T> temp = this.head;
+            while (temp !=null)
+            {
+                this.count++;
+                temp = temp.next;
+            }
         }
 
         private Node<T> Min()
@@ -171,6 +177,30 @@ namespace ElementaryDataStrucutres.LinkedList
             return minNode;
         }
 
+        private Node<T> Max()
+        {
+            Node<T> temp = head;
+            Node<T> maxNode = temp;
+            int position = 0;
+            int maxPos = 0;
+            while (temp != null)
+            {
+                if (temp > maxNode)
+                {
+                    maxNode = temp;
+                    maxPos = position;
+                }
+
+                temp = temp.next;
+                position++;
+            }
+
+            //remove min node from the list;
+            Delete(maxPos);
+            maxNode.next = null;
+            return maxNode;
+        }
+
         public void Sort()
         {
             Node<T> temp = head;
@@ -187,7 +217,16 @@ namespace ElementaryDataStrucutres.LinkedList
 
         public void SortDescending()
         {
+            Node<T> temp = head;
+            Node<T> sorted = null;
+            LinkedList<T> newList = new LinkedList<T>();
+            while (!IsEmpty())
+            {
+                sorted = Max();
+                newList.Add(sorted.Data);
+            }
 
+            Copy(newList);
         }
     }
 }
