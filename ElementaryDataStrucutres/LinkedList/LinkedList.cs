@@ -11,6 +11,20 @@ namespace ElementaryDataStrucutres.LinkedList
     {
         private Node<T> head;
         private ListType type;
+        private int count;
+
+        private Node<T> Head
+        {
+            get
+            {
+                return this.head;
+            }
+
+            set
+            {
+                this.head = value;
+            }
+        }
 
         private Node<T> AddRecursive(Node<T> node, T data)
         {
@@ -39,17 +53,20 @@ namespace ElementaryDataStrucutres.LinkedList
         {
             head = null;
             this.type = ListType.Singly;
+            count = 0;
         }
 
         public LinkedList(ListType listType)
         {
             head = null;
             this.type = listType;
+            count = 0;
         }
 
         public void Add(T data)
         {
             head = AddRecursive(head, data);
+            ++count;
         }
 
         public void Insert(T data, int position)
@@ -81,25 +98,29 @@ namespace ElementaryDataStrucutres.LinkedList
         public void Delete(int position)
         {
             int count = 0;
-            Node<T> temp = head;
+            Node<T> current = head;
+            Node<T> next = head.next;
             Node<T> prev = null;
-            while (count < position && temp != null)
+            while (count < position && current != null)
             {
+                prev = current;
+                current = current.next;
+                next = next.next;
                 count++;
-                prev = temp;
-                temp = temp.next;
             }
 
-            if (temp != null && prev != null)
+            if (count == 0)
             {
-                Node<T> deleted = temp;
-                prev.next = temp.next;
+                current = head;
+                head = head.next;
+                this.count--;
             }
-            else if (temp != null && prev == null)
+            else
             {
-                temp = temp.next;
-                head = temp;
+                prev.next = current.next;
+                this.count--;
             }
+
         }
 
         public void Print()
@@ -112,5 +133,61 @@ namespace ElementaryDataStrucutres.LinkedList
             }
         }
 
+        public bool IsEmpty()
+        {
+            if (count == 0)
+                return true;
+            else
+                return false;
+        }
+
+        
+        private void Copy(LinkedList<T> souce)
+        {
+            this.Head = souce.Head; 
+        }
+
+        private Node<T> Min()
+        {
+            Node<T> temp = head;
+            Node<T> minNode = temp;
+            int position = 0;
+            int minPos = 0;
+            while (temp != null)
+            {
+                if (temp < minNode)
+                {
+                    minNode = temp;
+                    minPos = position;
+                }
+
+                temp = temp.next;
+                position++;
+            }
+
+            //remove min node from the list;
+            Delete(minPos);
+            minNode.next = null;
+            return minNode;
+        }
+
+        public void Sort()
+        {
+            Node<T> temp = head;
+            Node<T> sorted = null;
+            LinkedList<T> newList = new LinkedList<T>();
+            while (!IsEmpty())
+            {
+                sorted = Min();
+                newList.Add(sorted.Data);
+            }
+
+            Copy(newList);
+        }
+
+        public void SortDescending()
+        {
+
+        }
     }
 }

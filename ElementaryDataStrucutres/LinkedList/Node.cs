@@ -23,5 +23,34 @@ namespace ElementaryDataStrucutres.LinkedList
         {
             return this.data.ToString();
         }
+
+        public T Data
+        {
+            get
+            {
+                return data;
+            }
+
+            set
+            {
+                data = value;
+            }
+        }
+
+        public static bool operator < (Node<T> o1, Node<T> o2)
+        {
+            if (o1.Data.CompareTo(o2.Data) < 0)
+                return true;
+            else
+                return false;
+        }
+
+        public static bool operator >(Node<T> o1, Node<T> o2)
+        {
+            if (o1.Data.CompareTo(o2.Data) > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }
