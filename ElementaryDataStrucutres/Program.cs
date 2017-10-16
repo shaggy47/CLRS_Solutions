@@ -1,5 +1,6 @@
 ﻿using ElementaryDataStrucutres.Queues;
 using ElementaryDataStrucutres.Stacks;
+using ElementaryDataStrucutres.Trees;
 using System;
 
 namespace ElementaryDataStrucutres
@@ -8,19 +9,19 @@ namespace ElementaryDataStrucutres
     {
         static void Main(string[] args)
         {
-            LinkedList.LinkedList<int> linkedList = new LinkedList.LinkedList<int>();
-            linkedList.Add(14);
-            linkedList.Add(13);
-            linkedList.Add(12);
-            linkedList.Add(11);
-            linkedList.Add(10);
-            linkedList.Add(9);
-            linkedList.Add(16);
-            linkedList.Sort();
-            linkedList.Print();
-            Console.WriteLine("**************");
-            linkedList.SortDescending();
-            linkedList.Print();
+            BST bST = new BST();
+            bST.Add(10);
+            bST.Add(9);
+            bST.Add(11);
+            bST.Add(8);
+            bST.Add(13);
+            bST.Add(7);
+            bST.Add(5);
+            bST.Add(20);
+            bST.Add(4);
+            bST.Add(3);
+            bST.Add(2);
+            bST.Add(1);
         }
     }
 }

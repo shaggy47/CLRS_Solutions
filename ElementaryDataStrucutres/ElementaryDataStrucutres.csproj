@@ -50,12 +50,12 @@
     <Compile Include="Queues\Queue.cs" />
     <Compile Include="Stacks\ExpressionEvaluator.cs" />
     <Compile Include="Stacks\Stack.cs" />
+    <Compile Include="Trees\BST.cs" />
+    <Compile Include="Trees\Node.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Trees\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
