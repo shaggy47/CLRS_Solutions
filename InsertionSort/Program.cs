@@ -40,9 +40,42 @@ namespace InsertionSort
             Console.WriteLine();
         }
 
+        static int BinarySearch(int[] arr, int item, int low, int high)
+        {
+            if (high <= low)
+                return (item > arr[low] ? low + 1 : low);
+
+            int mid = (low + high) / 2;
+
+            if (item == arr[mid])
+                return mid + 1;
+
+            if (item > arr[mid])
+                return BinarySearch(arr, item, mid+1, high);
+
+            return BinarySearch(arr, item, low, mid-1);
+            
+        }
+
         static int[] BinaryInsertion(int[] arr)
         {
             // todo excercise. come up with the algorithm for binary insertion.
+            int item = 0;
+            int j = 0;
+            int loc = 0;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                j = i - 1;
+                item = arr[i];
+                loc = BinarySearch(arr, item, 0, j);
+                while (j >= loc)
+                {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+
+                arr[j + 1] = item;
+            }
             return arr;
         }
 
@@ -50,7 +83,8 @@ namespace InsertionSort
         {
             //unit test
             int[] arr = { 6, 5, 4, 3, 2, 1, 0 };
-            arr = InsSort(arr);
+            BinaryInsertion(arr);
+            //arr = InsSort(arr);
             Print(arr);
             Console.Read();
         }
